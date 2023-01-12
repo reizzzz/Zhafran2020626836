@@ -1,0 +1,127 @@
+<!DOCKTYPE html>
+<html>
+<head>
+  
+	<link rel="stylesheet" type"text/css" href="webdesign/assets/css/style.css">
+	
+	
+	<title>Mywebsite</title>
+</head>
+
+
+<body>
+
+
+    <h2 class="logo">My<span>web</span></h2>
+    <body>
+
+<!---Header---> 
+<div class="topnav"> 
+  <a class="active" href="index.html">Home</a> 
+  <a href="About_me.html">About</a> 
+  <a href="education.html">Education</a> 
+  <a href="family.html">Family</a> 
+  <a href="experience.html">Experience</a> 
+  <a href="galery.html">Gallery</a> 
+</div>
+
+  </div>
+<!----clock---->
+
+<br>
+
+   <div id="clock">
+
+  <h6 id="date-time" float:right;"></h6>
+
+</div>
+
+<script>
+
+window.addEventListener("load", () => {
+  clock();
+  function clock() {
+    const today = new Date();
+
+    // get time components
+    const hours = today.getHours();
+    const minutes = today.getMinutes();
+    const seconds = today.getSeconds();
+
+    //add '0' to hour, minute & second when they are less 10
+    const hour = hours < 10 ? "0" + hours : hours;
+    const minute = minutes < 10 ? "0" + minutes : minutes;
+    const second = seconds < 10 ? "0" + seconds : seconds;
+
+    //make clock a 12-hour time clock
+    const hourTime = hour > 12 ? hour - 12 : hour;
+
+    // if (hour === 0) {
+    //   hour = 12;
+    // }
+    //assigning 'am' or 'pm' to indicate time of the day
+    const ampm = hour < 12 ? "AM" : "PM";
+
+    // get date components
+    const month = today.getMonth();
+    const year = today.getFullYear();
+    const day = today.getDate();
+
+    //declaring a list of all months in  a year
+    const monthList = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ];
+
+    //get current date and time
+    const date = monthList[month] + " " + day + ", " + year;
+    const time = hourTime + ":" + minute + ":" + second + ampm;
+
+    //combine current date and time
+    const dateTime = date + " - " + time;
+
+    //print current date and time to the DOM
+    document.getElementById("date-time").innerHTML = dateTime;
+    setTimeout(clock, 1000);
+  }
+});
+
+</script>
+
+<br>
+
+
+  	<img class="profile" src="webdesign/assets/picture/mypic.jpg" alt="mypic" border="5" width="240" height="240">
+
+<br><br>
+
+  <div class="content">
+	<h4>Hello, my name is</h4>
+	<h1>Zhafran <span> Zauri, </span></h1>
+	<h6>Welcome to my website design!!</h6>
+	
+  </div>
+ 
+
+	<video autoplay controls loop muted style="height:50%;width:40%;margin-left:300px;margin-top:50px;">
+
+		<source src="webdesign/assets/video/hookmv.mp4" type="video/mp4">
+
+	</video>
+
+ </div>
+
+
+
+</body>
+</html> 
